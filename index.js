@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("node:path");
 
 const app = express();
+app.use("/assets", express.static("assets"));
 
 app.get("/", (request, response) => {
   response.sendFile(path.join(__dirname, "index.html"));
