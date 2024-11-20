@@ -1,9 +1,11 @@
-import express from "express";
+"use strict";
+const express = require("express");
+const path = require("node:path");
 
 const app = express();
 
 app.get("/", (request, response) => {
-  response.send("Hello there");
+  response.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.listen(3000, () => {
