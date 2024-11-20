@@ -18,3 +18,7 @@
 ## Phase 3: Error handling and optimization
 
 1. Add error handling to your routes
+
+## ES Module Specifics
+
+- switching to es modules will make `__dirname` not work. Review [this post by Flaviocopes](https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/) on the fix used in this code.
