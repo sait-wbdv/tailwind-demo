@@ -5,11 +5,14 @@ const path = require("node:path");
 const app = express();
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 
-app.get("/", (req, res) => {
+app.get("/", (req, res, next) => {
   try {
+    if (!res.ok) {
+      throw new Error("Something went wrong");
+    }
     res.sendFile(path.join(__dirname, "index.html"));
-  } catch (error) {
-    res.status(500).send("Internal Server Error");
+  } catch (err) {
+    next(err);
   }
 });
 
