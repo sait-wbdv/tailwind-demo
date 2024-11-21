@@ -28,6 +28,11 @@ app.use((req, res, next) => {
   res.status(404).send("Page Not Found");
 });
 
+app.use((err, req, res, next) => {
+  console.error(`Unhandled Error: ${err}`);
+  ressolve.status(500).send("Internal Server Error");
+});
+
 app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
 });
