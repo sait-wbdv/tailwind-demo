@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./assets/input.css -o ./assets/output.css --watch",
+    "dev": "node index.js",
+    "build": "tailwindcss -i ./assets/input.css -o ./assets/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.4.15"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
   }
 }
